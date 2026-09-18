@@ -1,0 +1,14 @@
+# clangd configuration for this project.
+#
+# This machine has MinGW-w64 g++ 16.2.0 installed at C:\mingw64, but NOT the
+# Windows SDK / UCRT (C:\Program Files (x86)\Windows Kits\10). Clang's default
+# Windows target is MSVC, so without the target flag below clangd fails with
+# "'math.h' file not found" (via <vector> -> <cmath>) and the whole standard
+# library parse collapses.
+#
+# Targeting MinGW GNU makes clang use the MinGW libstdc++ that is already
+# installed, which is found automatically through PATH.
+CompileFlags:
+  Add:
+    - --target=x86_64-w64-mingw32
+    - -std=c++20
