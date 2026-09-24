@@ -9,6 +9,8 @@
 # Targeting MinGW GNU makes clang use the MinGW libstdc++ that is already
 # installed, which is found automatically through PATH.
 CompileFlags:
+  # Use the flags CMake generates (build/compile_commands.json) when present.
+  CompilationDatabase: build
   Add:
     - --target=x86_64-w64-mingw32
     - -std=c++20
