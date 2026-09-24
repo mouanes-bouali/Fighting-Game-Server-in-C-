@@ -1,0 +1,8 @@
+namespace Types {
+
+
+struct buffer {
+
+};
+
+}
