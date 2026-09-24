@@ -1,0 +1,31 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "clang-mingw",
+      "displayName": "clang++ targeting MinGW-w64 (no Windows SDK required)",
+      "description": "This machine has no Windows SDK/UCRT, so clang must not use its default MSVC target. CMAKE_CXX_COMPILER_TARGET makes CMake link against MinGW-w64 (C:\\mingw64) instead.",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "C:/LLVM/bin/clang++.exe",
+        "CMAKE_CXX_COMPILER_TARGET": "x86_64-w64-mingw32"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "clang-mingw",
+      "configurePreset": "clang-mingw"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "clang-mingw",
+      "configurePreset": "clang-mingw",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ]
+}
