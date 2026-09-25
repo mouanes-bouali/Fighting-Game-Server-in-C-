@@ -1,8 +1,11 @@
+#pragma once
 
-
+#include <cstddef>
 #include <cstdint>
+#include <utility>
 #include <vector>
-namespace port{
+
+namespace port {
 // ─── Strong types ─────────────────────────────────────────────
 enum class RoomId : size_t {};
 enum class ClientId : size_t {};
