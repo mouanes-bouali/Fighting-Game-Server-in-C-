@@ -42,3 +42,4 @@ Determinism — All simulation code uses integer/fixed-point math only. No float
 Random seed — A single random seed is generated at match creation and shared with both clients.
 
 Timeout — If a player is silent for 5 seconds, they're marked as disconnected.
+
